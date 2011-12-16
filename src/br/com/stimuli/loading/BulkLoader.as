@@ -954,8 +954,8 @@ image: ImageItem,
     public function _onItemError(evt : ErrorEvent) : void{
         var item : LoadingItem  = evt.target as LoadingItem;
         _removeFromConnections(item);
-        log("After " + item.numTries + " I am giving up on " + item.url.url, LOG_ERRORS);
-        log("Error loading", item, evt.text, LOG_ERRORS);
+//        log("After " + item.numTries + " I am giving up on " + item.url.url, LOG_ERRORS);
+//        log("Error loading", item, evt.text, LOG_ERRORS);
         _loadNext();
         //evt.stopPropagation();
         //evt.currentTarget = item;
@@ -1308,7 +1308,7 @@ image: ImageItem,
                 return res;
             }
         }catch(e : Error){
-            log("Failed to get content with url: '"+ key + "'as type:", type, LOG_ERRORS);
+//            log("Failed to get content with url: '"+ key + "'as type:", type, LOG_ERRORS);
         }
 
         return null;
@@ -1391,7 +1391,7 @@ image: ImageItem,
             }
             return res;
         }catch(e : Error){
-            log("Failed to get content with url: '"+ key + "'as type: Loader", LOG_ERRORS);
+//            log("Failed to get content with url: '"+ key + "'as type: Loader", LOG_ERRORS);
         }
 
         return null;
@@ -1455,7 +1455,7 @@ image: ImageItem,
         try{
             return getBitmap(key,  clearMemory).bitmapData;
         }catch (e : Error){
-            log("Failed to get bitmapData with url:", key, LOG_ERRORS);
+//            log("Failed to get bitmapData with url:", key, LOG_ERRORS);
         }
         return  null;
     }
